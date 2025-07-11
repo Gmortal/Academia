@@ -1,0 +1,261 @@
+/* ==================================================
+   1. CONFIGURAÇÕES GLOBAIS E VARIÁVEIS
+   ================================================== */
+:root {
+    --primary-color: #F47C2D; /* Laranja para títulos e destaques */
+    --dark-color: #240EF5;    /* Azul vibrante para o fundo principal */
+    --light-gray: #1A0AAB;   /* Um azul mais escuro para contraste */
+    --text-color: #ffffff;   /* Branco puro para o texto, garantindo legibilidade */
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    /* Agora o fundo principal usa a variável com a cor azul */
+    background-color: var(--dark-color);
+    color: var(--text-color);
+    font-family: 'Poppins', 'Helvetica', sans-serif;
+    padding-top: 56px; 
+}
+
+/* ==================================================
+   2. ESTILOS REUTILIZÁVEIS
+   ================================================== */
+section {
+    padding: 80px 0;
+    overflow: hidden;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 60px;
+    font-size: 2.8rem;
+    font-weight: 700;
+    /* Títulos agora usam a cor laranja */
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.bg-light-gray {
+    /* Seções de contraste agora usam o azul escuro */
+    background-color: var(--light-gray);
+}
+
+/* ==================================================
+   3. NAVBAR (Menu)
+   ================================================== */
+.navbar {
+    background-color: rgba(26, 10, 171, 0.8) !important; /* Azul escuro semi-transparente */
+    backdrop-filter: blur(10px);
+    transition: background-color 0.3s ease;
+}
+
+.navbar .nav-link {
+    color: #fff;
+    font-weight: 500;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+    color: var(--primary-color);
+}
+
+.navbar-brand {
+    font-weight: bold;
+    color: var(--primary-color) !important;
+}
+
+/* ==================================================
+   4. SEÇÃO HOME
+   ================================================== */
+#home {
+    height: 100vh;
+    min-height: 600px;
+    background: url('../img/individuo-que-pratica-desporto-e-leva-um-estilo-de-vida-saudavel.jpg') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    padding-top: 56px;
+    isolation: isolate; 
+}
+
+#home::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(36, 14, 245, 1), rgba(36, 14, 245, 0.4));
+    z-index: -1; 
+}
+
+#home .container {
+    position: relative;
+    z-index: 2;
+}
+
+#home h1 {
+    color: #fff;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+}
+
+#home .btn-warning {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: #fff; /* Texto branco fica melhor no laranja */
+    font-weight: bold;
+    padding: 15px 30px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+#home .btn-warning:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(244, 124, 45, 0.3);
+}
+
+/* ==================================================
+   5. SEÇÃO SOBRE NÓS
+   ================================================== */
+#sobre p {
+    line-height: 1.8;
+    color: #d0d0d0; /* Um pouco mais escuro que branco puro para não cansar */
+}
+
+/* ==================================================
+   6. SEÇÃO INFRAESTRUTURA
+   ================================================== */
+#infraestrutura img {
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#infraestrutura img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* ==================================================
+   7. SEÇÃO PLANOS
+   ================================================== */
+#planos .card {
+    background-color: #1A0AAB; /* Azul escuro para os cards */
+    border: 1px solid #240EF5;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 10px;
+}
+#planos .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+}
+
+#planos .card .card-body h4,
+#planos .card .card-body li {
+    color: var(--text-color);
+}
+
+#planos .card-destaque {
+    border: 2px solid var(--primary-color);
+    transform: scale(1.05);
+}
+
+#planos .card-header {
+    background-color: #120775; /* Azul ainda mais escuro para header */
+    border-bottom: 1px solid #240EF5;
+    padding: 20px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+#planos .card-destaque .card-header {
+    background-color: var(--primary-color);
+    color: #000; /* Texto PRETO para melhor contraste com o laranja */
+    border: none;
+}
+
+#planos .btn {
+    font-weight: bold;
+}
+
+#planos .btn-outline-warning {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+#planos .btn-outline-warning:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+/* ==================================================
+   8. FAQ (ACORDEÃO)
+   ================================================== */
+.accordion-item {
+    background-color: var(--light-gray);
+    border: 1px solid #240EF5;
+    margin-bottom: 10px;
+    border-radius: 5px !important;
+}
+.accordion-button {
+    background-color: var(--light-gray);
+    color: #fff;
+    font-weight: 600;
+}
+.accordion-button:not(.collapsed) {
+    background-color: var(--primary-color);
+    color: #000;
+    box-shadow: inset 0 -1px 0 rgba(0,0,0,.125);
+}
+.accordion-button:focus {
+    box-shadow: none;
+    border-color: transparent;
+}
+.accordion-body {
+    background-color: #120775;
+    color: #d0d0d0;
+}
+.accordion-button::after {
+    filter: invert(1) grayscale(100%) brightness(200%);
+}
+
+
+/* ==================================================
+   9. FOOTER (RODAPÉ)
+   ================================================== */
+footer#contato {
+    background-color: #120775 !important; /* <<< MUDANÇA AQUI */
+}
+   
+#contato hr {
+    background-color: var(--primary-color) !important;
+    opacity: 1;
+}
+#contato .social-icons a {
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;    
+    justify-content: center;
+    border-radius: 50%;
+}
+
+/* ==================================================
+   10. RESPONSIVIDADE
+   ================================================== */
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2rem;
+    }
+    #home h1 {
+        font-size: 2.5rem;
+    }
+    #planos .card-destaque {
+        transform: scale(1);
+    }
+}
