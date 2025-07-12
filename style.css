@@ -76,7 +76,7 @@ section {
 #home {
     height: 100vh;
     min-height: 600px;
-    background: url('../img/individuo-que-pratica-desporto-e-leva-um-estilo-de-vida-saudavel.jpg') no-repeat center center;
+    background: url('assets/individuo-que-pratica-desporto-e-leva-um-estilo-de-vida-saudavel-min.jpg') no-repeat center center;
     background-size: cover;
     background-attachment: fixed;
     position: relative;
