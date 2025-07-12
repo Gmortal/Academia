@@ -81,11 +81,13 @@
         data: new Date().toLocaleDateString('pt-BR')
       };
 
-      fetch('https://servidor-matricula.onrender.com', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(dadosMatricula)
-      })
+      fetch('https://servidor-matricula.onrender.com/matricula', {
+      method: 'POST',
+       headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(dadosMatricula)
+    })
+
+      
       .then(res => res.json())
       .then(data => {
         mensagemDiv.innerHTML = `<div class="alert alert-success">${data.mensagem}</div>`;
