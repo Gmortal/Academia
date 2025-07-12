@@ -81,7 +81,7 @@
         data: new Date().toLocaleDateString('pt-BR')
       };
 
-      fetch('http://localhost:3000/matricula', {
+      fetch('https://servidor-matricula.onrender.com', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(dadosMatricula)
